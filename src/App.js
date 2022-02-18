@@ -16,7 +16,9 @@ function App() {
 
       // Fetching featured movie. Skips movies that do not contains backdrop image
       const originals = data.filter((e) => e.slug === "originals")[0];
-      const filtered = originals.items.results.filter((e) => e.backdrop_path);
+      const filtered = originals.items.results.filter(
+        (e) => e.backdrop_path && e.overview && e.overview !== ""
+      );
 
       const randomIdx = Math.floor(Math.random() * (filtered.length - 1));
       const featured = filtered[randomIdx];

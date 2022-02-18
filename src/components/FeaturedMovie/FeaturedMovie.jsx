@@ -17,6 +17,8 @@ const FeaturedMovie = ({ item }) => {
   const sample = [14, 14, 16];
   const rating = sample[Math.floor(Math.random() * sample.length)];
 
+  const overview = item.overview.split(". ").slice(0, 2).join(". ");
+
   return (
     <section
       className="featured"
@@ -44,7 +46,10 @@ const FeaturedMovie = ({ item }) => {
               {item.number_of_seasons} season{item.number_of_seasons > 1 && "s"}
             </div>
           </div>
-          <div className="featured--overview">{item.overview}</div>
+          <div className="featured--overview">
+            {overview}
+            {overview.slice(-1) !== "." && "."}
+          </div>
           <div className="featured--buttons">
             <a href={`/watch/${item.id}`} className="featured--buttons-watch">
               ► Play
