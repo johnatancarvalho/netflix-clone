@@ -11,7 +11,6 @@ function App() {
   useEffect(() => {
     const loadData = async () => {
       const data = await dataProvider.getHomeList();
-      console.log(data);
       setMovieList(data);
 
       const originals = data.filter((e) => e.slug === "originals");
@@ -19,8 +18,15 @@ function App() {
         Math.random() * (originals[0].items.results.length - 1)
       );
       const randomMovie = originals[0].items.results[randomMovieIdx];
+      const randomMovieInfo = await dataProvider.getMovieInfo(
+        randomMovie.id,
+        "tv"
+      );
+      setFeaturedMovie(randomMovieInfo);
 
+      console.log(data);
       console.log(randomMovie);
+      console.log(randomMovieInfo);
     };
 
     loadData();

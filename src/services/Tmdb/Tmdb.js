@@ -61,6 +61,21 @@ const tmdb = {
       ),
     },
   ],
+  getMovieInfo: async (movieId, type) => {
+    const getMovieInfoEndpoint = () => {
+      const TYPES_URLS = Object.freeze({
+        movie: `/movie/${movieId}?api_key=${API_KEY}`,
+        tv: `/tv/${movieId}?api_key=${API_KEY}`,
+      });
+      return Object.keys(TYPES_URLS).includes(type) ? TYPES_URLS[type] : "";
+    };
+
+    let info = null;
+    if (movieId) {
+      info = await tmdbFetch(getMovieInfoEndpoint());
+    }
+    return info;
+  },
 };
 
 export default tmdb;
