@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import { dataProvider } from "./services";
-import { FeaturedMovie, MovieRow } from "./components";
+import { FeaturedMovie, MovieRow, Header } from "./components";
 
 function App() {
   const [movieList, setMovieList] = useState([]);
@@ -36,6 +36,8 @@ function App() {
 
   return (
     <div className="page">
+      <Header />
+
       {featuredMovie && <FeaturedMovie item={featuredMovie} />}
 
       <section className="lists">
