@@ -27,16 +27,9 @@ const tmdb = {
     },
     {
       slug: "action",
-      title: "Action & adventure",
+      title: "Action & Adventure",
       items: await tmdbFetch(
         `/discover/movie?with_genres=28&api_key=${API_KEY}`
-      ),
-    },
-    {
-      slug: "comedy",
-      title: "Comedies",
-      items: await tmdbFetch(
-        `/discover/movie?with_genres=35&api_key=${API_KEY}`
       ),
     },
     {
@@ -47,17 +40,24 @@ const tmdb = {
       ),
     },
     {
+      slug: "comedy",
+      title: "Comedy",
+      items: await tmdbFetch(
+        `/discover/movie?with_genres=35&api_key=${API_KEY}`
+      ),
+    },
+    {
       slug: "romance",
-      title: "Romantic movies",
+      title: "Romance",
       items: await tmdbFetch(
         `/discover/movie?with_genres=10749&api_key=${API_KEY}`
       ),
     },
     {
-      slug: "documentary",
-      title: "Documentaries",
+      slug: "family",
+      title: "Family",
       items: await tmdbFetch(
-        `/discover/movie?with_genres=99&api_key=${API_KEY}`
+        `/discover/movie?with_genres=10751&api_key=${API_KEY}`
       ),
     },
   ],
