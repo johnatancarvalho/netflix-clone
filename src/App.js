@@ -10,23 +10,23 @@ function App() {
 
   useEffect(() => {
     const loadData = async () => {
+      // Fetching movie lists data
       const data = await dataProvider.getHomeList();
       setMovieList(data);
 
-      const originals = data.filter((e) => e.slug === "originals");
-      const randomMovieIdx = Math.floor(
-        Math.random() * (originals[0].items.results.length - 1)
-      );
-      const randomMovie = originals[0].items.results[randomMovieIdx];
-      const randomMovieInfo = await dataProvider.getMovieInfo(
-        randomMovie.id,
-        "tv"
-      );
-      setFeaturedMovie(randomMovieInfo);
+      // Fetching featured movie. Skips movies that do not contains backdrop image
+      const originals = data.filter((e) => e.slug === "originals")[0];
+      const filtered = originals.items.results.filter((e) => e.backdrop_path);
 
+      const randomIdx = Math.floor(Math.random() * (filtered.length - 1));
+      const featured = filtered[randomIdx];
+      const featuredInfo = await dataProvider.getMovieInfo(featured.id, "tv");
+
+      setFeaturedMovie(featuredInfo);
+      // todo: remove console logs
       console.log(data);
-      console.log(randomMovie);
-      console.log(randomMovieInfo);
+      console.log(featured);
+      console.log(featuredInfo);
     };
 
     loadData();
