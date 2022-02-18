@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import { dataProvider } from "./services";
-
-import { MovieRow } from "./components/MovieRow";
+import { MovieRow } from "./components";
 
 function App() {
   const [movieList, setMovieList] = useState([]);
