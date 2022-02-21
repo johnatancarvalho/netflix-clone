@@ -7,6 +7,7 @@ import { FeaturedMovie, MovieRow, Header } from "./components";
 function App() {
   const [movieList, setMovieList] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState(null);
+  const [blackHeader, setBlackHeader] = useState(false);
 
   useEffect(() => {
     const loadData = async () => {
@@ -34,9 +35,23 @@ function App() {
     loadData();
   }, []);
 
+  useEffect(() => {
+    const scrollListener = () => {
+      if (window.scrollY > 10) {
+        setBlackHeader(true);
+      } else setBlackHeader(false);
+    };
+
+    window.addEventListener("scroll", scrollListener);
+
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, []);
+
   return (
     <div className="page">
-      <Header />
+      <Header black={blackHeader} />
 
       {featuredMovie && <FeaturedMovie item={featuredMovie} />}
 
@@ -45,6 +60,21 @@ function App() {
           <MovieRow key={key} title={item.title} items={item.items} />
         ))}
       </section>
+
+      <footer>
+        <span role="img" aria-label="-">
+          ⛏️
+        </span>
+        Created by Johnatan C Souza <br />
+        <span role="img" aria-label="-">
+          ©️
+        </span>
+        All rights reserved to Netflix <br />
+        <span role="img" aria-label="-">
+          📀
+        </span>
+        Data fetched from themoviedb.org <br />
+      </footer>
     </div>
   );
 }
