@@ -4,12 +4,15 @@
 
 This project is a simplified Netflix home page for my portfolio ([live demo here](https://johnatancarvalho.github.io/netflix-clone/)). It features a web app with a responsive interface that fetches movie data from [themoviedb.org API](https://www.themoviedb.org/documentation/api).
 
+
 ## Setup/Installation Requirements
 
 * Install [Node.js](https://nodejs.org/)
 * Download or clone this repo
 * Open terminal and navigate to the repo's main folder
 * Run `npm install`
+* Register at [themoviedb.org](https://www.themoviedb.org/) and follow the [instructions](https://developers.themoviedb.org/3/getting-started/introduction) to apply for an API key
+* Create a `.env` file and add a environment variable named `REACT_APP_TMDB_API_KEY=ABC123`. Replace "ABC123" with your actual API key.
 * Run `npm start` 
 
 ## Technologies Used
