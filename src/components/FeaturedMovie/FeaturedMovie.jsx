@@ -1,23 +1,25 @@
+import { useEffect, useState } from "react";
 import "./FeaturedMovie.css";
 
 const FeaturedMovie = ({ item }) => {
-  console.log(item);
+  const [rating, setRating] = useState(null);
 
   const genres = item.genres.map((e) => e.name);
 
   const match = Math.floor(Math.random() * (97 - 82)) + 82;
 
-  // Content rating info is genrated randomly.
+  const overview = item.overview.split(". ").slice(0, 2).join(". ");
+
   const ratings = Object.freeze({
     12: "#f7c727",
     14: "#e6792a",
     16: "#d7262e",
   });
-
-  const sample = [14, 14, 16];
-  const rating = sample[Math.floor(Math.random() * sample.length)];
-
-  const overview = item.overview.split(". ").slice(0, 2).join(". ");
+  // Content rating is genrated randomly.
+  useEffect(() => {
+    const sample = [14, 14, 16];
+    setRating(sample[Math.floor(Math.random() * sample.length)]);
+  }, [item]);
 
   return (
     <section
