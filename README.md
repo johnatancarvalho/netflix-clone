@@ -2,13 +2,13 @@
 
 ## Description
 
-This project is a simplified Netflix home page for my portfolio ([live demo here](https://johnatancarvalho.github.io/netflix-clone/)). It features a web app with a responsive interface that fetches movie data from [themoviedb.org API](https://www.themoviedb.org/documentation/api).
+This project is a simplified Netflix home page for my portfolio ([live demo here](https://johnatancarvalho.github.io/netflix-clone/)). It features a mobile-friendly web app that fetches movie data from [themoviedb.org API](https://www.themoviedb.org/documentation/api).
 
-## Displays a featured movie or TV show.
+#### _Displays a featured movie or TV show._
 
 ![Featured Movie](featured.png "Featured movie")
 
-## And other relevant movie lists with navigation scroll for left and right.
+#### _And other relevant movie lists with navigation scroll for left and right._
 
 ![Movie lists](lists.png "Movie lists")
 
