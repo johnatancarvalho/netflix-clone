@@ -28,10 +28,6 @@ function App() {
       const featuredInfo = await dataProvider.getMovieInfo(featured.id, "tv");
 
       setFeaturedMovie(featuredInfo);
-      // todo: remove console logs
-      console.log(data);
-      console.log(featured);
-      console.log(featuredInfo);
     };
 
     loadData();
