@@ -40,3 +40,12 @@ footer span {
   width: 50em;
   height: 25em;
 }
+
+@media (max-width: 760px) {
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 5em;
+  }
+}
