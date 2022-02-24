@@ -4,16 +4,23 @@
 
 This project is a simplified Netflix home page for my portfolio ([live demo here](https://johnatancarvalho.github.io/netflix-clone/)). It features a web app with a responsive interface that fetches movie data from [themoviedb.org API](https://www.themoviedb.org/documentation/api).
 
+## Displays a featured movie or TV show.
+
+![Featured Movie](featured.png "Featured movie")
+
+## And other relevant movie lists with navigation scroll for left and right.
+
+![Movie lists](lists.png "Movie lists")
 
 ## Setup/Installation Requirements
 
-* Install [Node.js](https://nodejs.org/)
-* Download or clone this repo
-* Open terminal and navigate to the repo's main folder
-* Run `npm install`
-* Register at [themoviedb.org](https://www.themoviedb.org/) and follow the [instructions](https://developers.themoviedb.org/3/getting-started/introduction) to apply for an API key
-* Create a `.env` file and add a environment variable named `REACT_APP_TMDB_API_KEY=ABC123`. Replace "ABC123" with your actual API key.
-* Run `npm start` 
+- Install [Node.js](https://nodejs.org/)
+- Download or clone this repo
+- Open terminal and navigate to the repo's main folder
+- Run `npm install`
+- Register at [themoviedb.org](https://www.themoviedb.org/) and follow the [instructions](https://developers.themoviedb.org/3/getting-started/introduction) to apply for an API key
+- Create a `.env` file and add a environment variable named `REACT_APP_TMDB_API_KEY=ABC123`. Replace "ABC123" with your actual API key.
+- Run `npm start`
 
 ## Technologies Used
 
@@ -28,5 +35,3 @@ This project is a simplified Netflix home page for my portfolio ([live demo here
 <a href="mailto:johnatancarvalho06@gmail.com" target="_blank"><img src="https://img.shields.io/badge/Gmail-D14836?style=flat-square&logo=gmail&logoColor=white" alt="Gmail"></a>
 <a href="https://www.linkedin.com/in/johnatan-csouza/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-%230077B5.svg?&style=flat-square&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 </p>
-
-
