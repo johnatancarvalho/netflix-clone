@@ -23,3 +23,20 @@ footer {
 footer span {
   margin-right: 5px;
 }
+
+.loader {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader img {
+  width: 50em;
+  height: 25em;
+}

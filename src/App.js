@@ -4,6 +4,8 @@ import "./App.css";
 import { dataProvider } from "./services";
 import { FeaturedMovie, MovieRow, Header } from "./components";
 
+import NetflixLoading from "../src/assets/img/netflix_loading.gif";
+
 function App() {
   const [movieList, setMovieList] = useState([]);
   const [featuredMovie, setFeaturedMovie] = useState(null);
@@ -52,6 +54,12 @@ function App() {
   return (
     <div className="page">
       <Header black={blackHeader} />
+
+      {movieList.length === 0 && !featuredMovie && (
+        <div className="loader">
+          <img src={NetflixLoading} alt="Loading..."></img>
+        </div>
+      )}
 
       {featuredMovie && <FeaturedMovie item={featuredMovie} />}
 
